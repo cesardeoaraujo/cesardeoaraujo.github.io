@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cesar de Araujo | Systems Architect & SRE</title>
+    <title>Cesar Araujo | Arquiteto de Sistemas & Operações</title>
     <style>
         * {
             margin: 0;
@@ -17,84 +17,87 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a; /* Azul escuro moderno */
+            background-color: #0f172a; /* Slate 900 */
             color: #f8fafc;
             line-height: 1.6;
             padding: 0;
         }
 
-        /* Container Global */
         .wrapper {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Seções */
-        section {
-            margin-bottom: 60px;
-            padding-top: 20px;
-        }
-
-        h2.section-title {
-            font-size: 1.8rem;
-            color: #38bdf8;
-            margin-bottom: 25px;
-            border-bottom: 2px solid rgba(56, 189, 248, 0.2);
-            padding-bottom: 8px;
+        /* Top Navigation/Header Contacts */
+        .top-meta {
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1e293b;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            color: #94a3b8;
         }
 
-        /* Hero Section (Sua base original adaptada) */
+        .top-meta a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .top-meta a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
         .hero {
-            text-align: center;
-            background: rgba(30, 41, 59, 0.5);
-            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+            padding: 50px 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
-            color: #38bdf8;
+            color: #38bdf8; /* Cyan 400 */
             font-weight: 700;
+            letter-spacing: -0.025em;
         }
 
         .subtitle {
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: #94a3b8;
-            margin-bottom: 25px;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #e2e8f0;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #cbd5e1;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
+            max-width: 850px;
+            margin-bottom: 30px;
         }
 
-        /* Links e Botões */
         .links {
             display: flex;
             gap: 15px;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 10px 22px;
+            border-radius: 6px;
             font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -104,7 +107,7 @@
 
         .btn-primary:hover {
             background-color: #0ea5e9;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
@@ -116,11 +119,25 @@
         .btn-secondary:hover {
             color: #f8fafc;
             border-color: #64748b;
-            background-color: rgba(51, 65, 85, 0.3);
-            transform: translateY(-2px);
+            background-color: rgba(51, 65, 85, 0.2);
+            transform: translateY(-1px);
         }
 
-        /* Grid de Habilidades */
+        /* Sections Layout */
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2.section-title {
+            font-size: 1.6rem;
+            color: #38bdf8;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -128,25 +145,26 @@
         }
 
         .skill-card {
-            background: rgba(30, 41, 59, 0.4);
+            background: rgba(30, 41, 59, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.03);
             padding: 20px;
             border-radius: 8px;
         }
 
         .skill-card h3 {
-            color: #e2e8f0;
+            color: #f1f5f9;
             font-size: 1.1rem;
             margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .skill-card ul {
             list-style: none;
-            color: #94a3b8;
-            font-size: 0.95rem;
         }
 
         .skill-card li {
+            color: #94a3b8;
+            font-size: 0.95rem;
             margin-bottom: 6px;
             display: flex;
             align-items: center;
@@ -156,48 +174,46 @@
             content: "▹";
             color: #38bdf8;
             margin-right: 8px;
-            font-weight: bold;
         }
 
-        /* Projetos (Cards Estilo Tech) */
+        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .project-card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 8px;
-            padding: 25px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease;
+            transition: border-color 0.2s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
             border-color: rgba(56, 189, 248, 0.3);
         }
 
         .project-header h3 {
             color: #f1f5f9;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             margin-bottom: 10px;
         }
 
         .project-card p {
             color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
 
-        .project-tags {
+        .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
             margin-bottom: 15px;
         }
 
@@ -205,89 +221,74 @@
             font-size: 0.75rem;
             background: #1e293b;
             color: #38bdf8;
-            padding: 4px 10px;
+            padding: 2px 8px;
             border-radius: 4px;
-            font-weight: 600;
         }
 
-        .project-link {
-            color: #38bdf8;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Experiência Profissional */
+        /* Timeline (Experience) */
         .timeline {
-            position: relative;
-            border-left: 2px solid #334155;
+            border-left: 2px solid #1e293b;
             padding-left: 20px;
             margin-left: 10px;
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .timeline-item::before {
             content: "";
             position: absolute;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background-color: #38bdf8;
             border-radius: 50%;
-            left: -27px;
-            top: 6px;
+            left: -26px;
+            top: 7px;
         }
 
         .job-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #f1f5f9;
             font-weight: 600;
         }
 
         .job-company {
             color: #38bdf8;
+            font-size: 0.95rem;
             font-weight: 500;
-            font-size: 1rem;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .job-date {
             font-size: 0.85rem;
             color: #64748b;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .job-desc {
             color: #94a3b8;
             font-size: 0.95rem;
+            padding-left: 15px;
         }
 
         .job-desc li {
-            margin-bottom: 8px;
-            margin-left: 15px;
+            margin-bottom: 6px;
         }
 
-        /* Rodapé */
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding-top: 40px;
             color: #475569;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid #1e293b;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .subtitle { font-size: 1.2rem; }
-            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .subtitle { font-size: 1.15rem; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -295,152 +296,151 @@
 
     <div class="wrapper">
         
-        <!-- Apresentação Principal (Hero) -->
+        <div class="top-meta">
+            <div>📍 São Paulo, SP</div>
+            <div>📧 <a href="mailto:cesar.araujo@outlook.com">cesar.araujo@outlook.com</a></div>
+            <div>🔗 <a href="https://linkedin.com/in/cesardearaujo" target="_blank">linkedin.com/in/cesardearaujo</a></div>
+        </div>
+
         <header class="hero">
-            <h1>Cesar de Araujo</h1>
-            <div class="subtitle">IT Systems Architect & Site Reliability Engineer (SRE)</div>
+            <h1>Cesar Araujo</h1>
+            <div class="subtitle">Arquiteto de Sistemas & Operações | Especialista em Integração, Observabilidade & Governança</div>
             <p>
-                Especialista em projetar e sustentar infraestruturas resilientes, escaláveis e altamente automatizadas. Apaixonado pela cultura DevOps, automação de fluxos complexos e o desenvolvimento de soluções inteligentes focadas em alta disponibilidade.
+                Profissional com mais de 20 anos de trajetória sólida na evolução de ecossistemas tecnológicos complexos, alinhando de ponta a ponta a infraestrutura de TI às estratégias de negócio. Especialista em liderança técnica de transformações digitais, quebra de silos corporativos através de automações inteligentes e governança robusta de ativos e processos operacionais com reporte direto ao C-Level.
             </p>
             <div class="links">
-                <a href="https://linkedin.com/in/cesardearaujo" target="_blank" class="btn btn-primary">Conectar no LinkedIn</a>
-                <a href="https://github.com/cesardeoaraujo" target="_blank" class="btn btn-secondary">Ver GitHub</a>
-                <a href="mailto:seu-email@provedor.com" class="btn btn-secondary">Contato Direto</a>
+                <a href="https://linkedin.com/in/cesardearaujo" target="_blank" class="btn btn-primary">LinkedIn</a>
+                <a href="https://github.com/cesardeoaraujo" target="_blank" class="btn btn-secondary">GitHub</a>
             </div>
         </header>
 
-        <!-- Seção Sobre Mim -->
-        <section id="sobre">
-            <h2 class="section-title">Sobre Mim</h2>
-            <p style="color: #cbd5e1; font-size: 1.05rem;">
-                Com uma trajetória sólida na arquitetura de sistemas e engenharia de confiabilidade, atuo na interseção entre desenvolvimento e operações para eliminar gargalos e garantir a estabilidade de ambientes críticos. Além da atuação corporativa tradicional, possuo forte inclinação para a cultura <i>maker</i>, projetando ambientes avançados de Home Lab, experimentando com IA local e desenvolvendo protótipos em IoT e automação.
-            </p>
-        </section>
-
-        <!-- Seção de Competências Técnicas -->
-        <section id="habilidades">
-            <h2 class="section-title">Habilidades Técnicas</h2>
+        <section id="skills">
+            <h2 class="section-title">Especialidades Técnicas & de Negócio</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Arquitetura & Infra</h3>
+                    <h3>Arquitetura & Integração</h3>
                     <ul>
-                        <li>Proxmox VE</li>
-                        <li>Docker & Portainer</li>
-                        <li>Ambientes On-Premise</li>
-                        <li>Armazenamento NAS</li>
+                        <li>Salesforce, TOTVS Protheus</li>
+                        <li>VTEX, Linx Core</li>
+                        <li>Modelagem SQL Server & Oracle</li>
+                        <li>Integrações de APIs Complexas</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Automação & CI/CD</h3>
+                    <h3>Eficiência & Automação</h3>
                     <ul>
-                        <li>n8n Workflows</li>
-                        <li>Integrações de API</li>
-                        <li>Pipelines de Dados</li>
-                        <li>Esteiras DevOps</li>
+                        <li>BPA (Autom. de Processos)</li>
+                        <li>Workflows n8n Avançados</li>
+                        <li>Otimização de CAPEX / OPEX</li>
+                        <li>Régua de Cobrança Digital</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Inteligência Artificial</h3>
+                    <h3>SRE & Observabilidade</h3>
                     <ul>
-                        <li>Ollama (Modelos Locais)</li>
-                        <li>LM Studio</li>
-                        <li>Engenharia de Prompts</li>
-                        <li>Automações com IA</li>
+                        <li>Métricas de Negócio em Tempo Real</li>
+                        <li>Zabbix & Grafana Dashboards</li>
+                        <li>Proxmox VE & Virtualização</li>
+                        <li>Docker / Portainer Clusters</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Cultura Maker & IoT</h3>
+                    <h3>Governança & Segurança</h3>
                     <ul>
-                        <li>Desenvolvimento Arduino</li>
-                        <li>Prototipagem de Hardware</li>
-                        <li>Impressão 3D (Bambu Lab)</li>
-                        <li>Firmwares customizados</li>
+                        <li>Pós-Graduação FIA (Cibersegurança)</li>
+                        <li>Mitigação de Fraudes e Riscos</li>
+                        <li>Auditoria Contínua & Compliance</li>
+                        <li>Metodologias Lean & Scrum</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Seção de Projetos Técnicos/Portfólio -->
-        <section id="projetos">
-            <h2 class="section-title">Projetos em Destaque</h2>
+        <section id="projects">
+            <h2 class="section-title">Engenharia de Soluções & Projetos Práticos</h2>
             <div class="projects-grid">
                 
-                <!-- Projeto 1: Pipeline de IA -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Job Finder AI Pipeline</h3>
-                        <p>Desenvolvimento de uma esteira automatizada de coleta e triagem inteligente de dados utilizando a plataforma n8n integrado com banco de dados relacional (MySQL) e ferramentas de produtividade. O sistema processa dados complexos e utiliza modelos locais de Inteligência Artificial para análise sem custos de nuvem externa.</p>
-                    </div>
                     <div>
-                        <div class="project-tags">
-                            <span class="tag">n8n</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Local AI</span>
-                            <span class="tag">Notion</span>
+                        <div class="tags"><span class="tag">n8n</span><span class="tag">Local AI</span><span class="tag">MySQL</span></div>
+                        <div class="project-header">
+                            <h3>Job Finder AI Pipeline</h3>
                         </div>
-                        <a href="https://github.com/cesardeoaraujo" target="_blank" class="project-link">Ver repositório →</a>
+                        <p>Esteira automatizada de scraping, transformação de dados e inteligência de triagem baseada em IA rodando localmente (Ollama/LM Studio), integrada com banco de dados analítico e sistemas de produtividade.</p>
                     </div>
                 </div>
 
-                <!-- Projeto 2: Home Lab -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Ambiente de Home Lab Self-Hosted</h3>
-                        <p>Arquitetura e implementação de uma infraestrutura residencial resiliente operada sob Proxmox VE. Centralização de serviços críticos via Docker e Portainer, gerenciamento de armazenamento unificado em rede (NAS) e monitoramento proativo através de scanners de rede e segurança integrada.</p>
-                    </div>
                     <div>
-                        <div class="project-tags">
-                            <span class="tag">Proxmox</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">Portainer</span>
-                            <span class="tag">Security</span>
+                        <div class="tags"><span class="tag">IoT</span><span class="tag">Arduino</span><span class="tag">C++</span></div>
+                        <div class="project-header">
+                            <h3>Hardware Maker Interativo</h3>
                         </div>
-                        <a href="https://github.com/cesardeoaraujo" target="_blank" class="project-link">Ver documentação →</a>
+                        <p>Prototipagem física e firmware customizado C++ para controle de gabinetes interativos, utilizando matrizes de entrada e sinalização dinâmica em tiras de LED endereçáveis em gabinetes estruturais planejados sob medida.</p>
                     </div>
                 </div>
 
-                <!-- Projeto 3: IoT Maker -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Sistema Interativo baseado em Arduino</h3>
-                        <p>Engenharia de hardware e software para um ecossistema interativo de entretenimento/jogos. Integração de microcontroladores com teclados de membrana matriciais, displays inteligentes e sinalização em fitas de LED endereçáveis, acondicionado em gabinetes estruturais planejados sob medida.</p>
-                    </div>
                     <div>
-                        <div class="project-tags">
-                            <span class="tag">Arduino</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">IoT</span>
-                            <span class="tag">Hardware</span>
+                        <div class="tags"><span class="tag">Proxmox</span><span class="tag">Docker</span><span class="tag">Security</span></div>
+                        <div class="project-header">
+                            <h3>Infraestrutura de Home Lab Resiliente</h3>
                         </div>
-                        <a href="https://github.com/cesardeoaraujo" target="_blank" class="project-link">Ver projeto →</a>
+                        <p>Arquitetura residencial avançada operada sob hypervisors redundantes, contêinerização centralizada e implantação de ferramentas de varredura ativa de rede e scanner de vulnerabilidades.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Seção de Trajetória Profissional -->
-        <section id="experiencia">
-            <h2 class="section-title">Experiência Recente</h2>
+        <section id="experience">
+            <h2 class="section-title">Trajetória Profissional de Impacto</h2>
             <div class="timeline">
-                
+
+                <div class="timeline-item">
+                    <div class="job-title">Sponsor de Melhorias Contínuas & Arquiteto de Sistemas</div>
+                    <div class="job-company">WCS Conectologia</div>
+                    <div class="job-date">Histórico de Liderança Operacional</div>
+                    <ul class="job-desc">
+                        <li>Liderança estratégica e técnica no desenho e governança do modelo operacional ponta a ponta integrando Vendas (Salesforce), Backoffice/Estoque (TOTVS Protheus) e Ativações (OTRS).</li>
+                        <li>Modernização do ecossistema de Field Service através de mobilidade inteligente e leitura de QR Codes, eliminando a manipulação manual e reduzindo erros de faturamento de ativos.</li>
+                        <li>Desenho técnico do projeto de Logística Avançada "BAAT Conceito", viabilizando portarias virtuais automáticas, controle remoto e biometria para auditoria contínua de estoques de insumos.</li>
+                        <li>Desenvolvimento de régua de cobrança automática via canais eletrônicos nativos integrados ao ERP, reduzindo o overhead financeiro e otimizando a recuperação de receitas de base.</li>
+                    </ul>
+                </div>
+
                 <div class="timeline-item">
                     <div class="job-title">Arquiteto de Sistemas de TI Sênior</div>
                     <div class="job-company">Caedu</div>
                     <div class="job-date">Junho de 2022 — Março de 2025</div>
                     <ul class="job-desc">
-                        <li>Desenho e orquestração de ambientes e arquiteturas de sistemas com foco em alta disponibilidade e estabilidade de plataformas críticas.</li>
-                        <li>Implementação de melhorias em observabilidade e monitoramento contínuo, reduzindo proativamente o tempo de resposta a incidentes.</li>
-                        <li>Liderança técnica e colaboração na definição de padrões de infraestrutura e governança tecnológica.</li>
+                        <li>Arquitetura e modelagem de integrações complexas de sistemas de e-commerce e varejo crítico, garantindo resiliência e estabilidade transacional.</li>
+                        <li>Otimização drástica do ciclo de testes e QA, reduzindo rotinas homologatórias complexas de dias para poucas horas via esteiras modernas de deploy.</li>
+                        <li>Implementação de telemetria preditiva em tempo real através de dashboards integrados (Zabbix/Grafana), antecipando falhas em fluxos logísticos cruciais.</li>
                     </ul>
                 </div>
 
             </div>
         </section>
 
-        <!-- Rodapé da Página -->
+        <section id="education">
+            <h2 class="section-title">Formação Acadêmica & Certificações</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="job-title">Pós-Graduação Lato Sensu em Cibersegurança e Proteção Digital de Negócios</div>
+                    <div class="job-company">FIA Business School</div>
+                    <div class="job-date">Concluído (Dezembro de 2025)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="job-title">Gestão em Tecnologia da Informação</div>
+                    <div class="job-company">Anhanguera Educacional</div>
+                    <div class="job-date">Graduação</div>
+                </div>
+            </div>
+        </section>
+
         <footer>
-            <p>&copy; 2026 Cesar de Araujo. Criado e mantido via GitHub Pages.</p>
+            <p>&copy; 2026 Cesar Araujo. Desenvolvido e hospedado de forma independente via GitHub Pages.</p>
         </footer>
 
     </div>
