@@ -1,449 +1,565 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cesar Araujo | Arquiteto de Sistemas & Operações</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cesar Araujo | Arquiteto de Soluções</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-        html {
-            scroll-behavior: smooth;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a; /* Slate 900 */
-            color: #f8fafc;
-            line-height: 1.6;
-            padding: 0;
-        }
+    :root {
+      --bg: #0b1020;
+      --card: #131b31;
+      --card-hover: #1a2544;
+      --primary: #4f8cff;
+      --secondary: #8bb3ff;
+      --text: #f5f7ff;
+      --muted: #9ea9c7;
+      --border: rgba(255,255,255,0.08);
+      --success: #00d084;
+    }
 
-        .wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #10172c 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        /* Top Navigation/Header Contacts */
-        .top-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #1e293b;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .top-meta a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .top-meta a:hover {
-            text-decoration: underline;
-        }
+    header {
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(11, 16, 32, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
-            padding: 50px 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            margin-bottom: 50px;
-        }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            color: #38bdf8; /* Cyan 400 */
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
 
-        .subtitle {
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: #e2e8f0;
-            margin-bottom: 20px;
-        }
+    .logo span {
+      color: var(--primary);
+    }
 
-        .hero p {
-            font-size: 1.05rem;
-            color: #cbd5e1;
-            max-width: 850px;
-            margin-bottom: 30px;
-        }
+    .menu {
+      display: flex;
+      gap: 24px;
+    }
 
-        .links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+    .menu a {
+      color: var(--muted);
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
 
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            font-size: 0.9rem;
-        }
+    .menu a:hover {
+      color: var(--text);
+    }
 
-        .btn-primary {
-            background-color: #38bdf8;
-            color: #0f172a;
-        }
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
 
-        .btn-primary:hover {
-            background-color: #0ea5e9;
-            transform: translateY(-1px);
-        }
+    .hero-content {
+      max-width: 850px;
+    }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: #94a3b8;
-            border: 1px solid #334155;
-        }
+    .tag {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(79, 140, 255, 0.3);
+      background: rgba(79, 140, 255, 0.1);
+      border-radius: 999px;
+      color: var(--secondary);
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+    }
 
-        .btn-secondary:hover {
-            color: #f8fafc;
-            border-color: #64748b;
-            background-color: rgba(51, 65, 85, 0.2);
-            transform: translateY(-1px);
-        }
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
 
-        /* Sections Layout */
-        section {
-            margin-bottom: 50px;
-        }
+    .hero h1 span {
+      color: var(--primary);
+    }
 
-        h2.section-title {
-            font-size: 1.6rem;
-            color: #38bdf8;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #1e293b;
-            padding-bottom: 8px;
-            font-weight: 600;
-        }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 720px;
+    }
 
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-        .skill-card {
-            background: rgba(30, 41, 59, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            border-radius: 8px;
-        }
+    .btn {
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
 
-        .skill-card h3 {
-            color: #f1f5f9;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
 
-        .skill-card ul {
-            list-style: none;
-        }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
 
-        .skill-card li {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-        }
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255,255,255,0.02);
+    }
 
-        .skill-card li::before {
-            content: "▹";
-            color: #38bdf8;
-            margin-right: 8px;
-        }
+    section {
+      padding: 100px 0;
+    }
 
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+    .section-title {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
 
-        .project-card {
-            background: rgba(30, 41, 59, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 8px;
-            padding: 22px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.2s ease;
-        }
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 48px;
+      max-width: 720px;
+    }
 
-        .project-card:hover {
-            border-color: rgba(56, 189, 248, 0.3);
-        }
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
 
-        .project-header h3 {
-            color: #f1f5f9;
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-        }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 
-        .project-card p {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      transition: 0.3s;
+    }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 15px;
-        }
+    .card:hover {
+      transform: translateY(-6px);
+      background: var(--card-hover);
+    }
 
-        .tag {
-            font-size: 0.75rem;
-            background: #1e293b;
-            color: #38bdf8;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
 
-        /* Timeline (Experience) */
-        .timeline {
-            border-left: 2px solid #1e293b;
-            padding-left: 20px;
-            margin-left: 10px;
-        }
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 35px;
-        }
+    .impact {
+      margin-top: 20px;
+      color: var(--success);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #38bdf8;
-            border-radius: 50%;
-            left: -26px;
-            top: 7px;
-        }
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        .job-title {
-            font-size: 1.15rem;
-            color: #f1f5f9;
-            font-weight: 600;
-        }
+    .stack span {
+      background: rgba(255,255,255,0.05);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--secondary);
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+    }
 
-        .job-company {
-            color: #38bdf8;
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
+    .timeline {
+      border-left: 2px solid rgba(255,255,255,0.1);
+      padding-left: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
 
-        .job-date {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 12px;
-        }
+    .timeline-item {
+      position: relative;
+    }
 
-        .job-desc {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            padding-left: 15px;
-        }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
 
-        .job-desc li {
-            margin-bottom: 6px;
-        }
+    .timeline-item h3 {
+      margin-bottom: 8px;
+    }
 
-        footer {
-            text-align: center;
-            padding-top: 40px;
-            color: #475569;
-            font-size: 0.85rem;
-            border-top: 1px solid #1e293b;
-        }
+    .timeline-item p {
+      color: var(--muted);
+    }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .subtitle { font-size: 1.15rem; }
-            .skills-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    .cta {
+      background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 32px;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .cta {
+        padding: 40px 24px;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        
-        <div class="top-meta">
-            <div>📍 São Paulo, SP</div>
-            <div>📧 <a href="mailto:cesar.araujo@outlook.com">cesar.araujo@outlook.com</a></div>
-            <div>🔗 <a href="https://linkedin.com/in/cesardearaujo" target="_blank">linkedin.com/in/cesardearaujo</a></div>
-        </div>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Cesar<span>Araujo</span></div>
 
-        <header class="hero">
-            <h1>Cesar Araujo</h1>
-            <div class="subtitle">Arquiteto de Sistemas & Operações | Especialista em Integração, Observabilidade & Governança</div>
-            <p>
-                Profissional com mais de 20 anos de trajetória sólida na evolução de ecossistemas tecnológicos complexos, alinhando de ponta a ponta a infraestrutura de TI às estratégias de negócio. Especialista em liderança técnica de transformações digitais, quebra de silos corporativos através de automações inteligentes e governança robusta de ativos e processos operacionais com reporte direto ao C-Level.
-            </p>
-            <div class="links">
-                <a href="https://linkedin.com/in/cesardearaujo" target="_blank" class="btn btn-primary">LinkedIn</a>
-                <a href="https://github.com/cesardeoaraujo" target="_blank" class="btn btn-secondary">GitHub</a>
-            </div>
-        </header>
+      <div class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#cases">Cases</a>
+        <a href="#stack">Stack</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-        <section id="skills">
-            <h2 class="section-title">Especialidades Técnicas & de Negócio</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Arquitetura & Integração</h3>
-                    <ul>
-                        <li>Salesforce, TOTVS Protheus</li>
-                        <li>VTEX, Linx Core</li>
-                        <li>Modelagem SQL Server & Oracle</li>
-                        <li>Integrações de APIs Complexas</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Eficiência & Automação</h3>
-                    <ul>
-                        <li>BPA (Autom. de Processos)</li>
-                        <li>Workflows n8n Avançados</li>
-                        <li>Otimização de CAPEX / OPEX</li>
-                        <li>Régua de Cobrança Digital</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>SRE & Observabilidade</h3>
-                    <ul>
-                        <li>Métricas de Negócio em Tempo Real</li>
-                        <li>Zabbix & Grafana Dashboards</li>
-                        <li>Proxmox VE & Virtualização</li>
-                        <li>Docker / Portainer Clusters</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Governança & Segurança</h3>
-                    <ul>
-                        <li>Pós-Graduação FIA (Cibersegurança)</li>
-                        <li>Mitigação de Fraudes e Riscos</li>
-                        <li>Auditoria Contínua & Compliance</li>
-                        <li>Metodologias Lean & Scrum</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
 
-        <section id="projects">
-            <h2 class="section-title">Engenharia de Soluções & Projetos Práticos</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <div>
-                        <div class="tags"><span class="tag">n8n</span><span class="tag">Local AI</span><span class="tag">MySQL</span></div>
-                        <div class="project-header">
-                            <h3>Job Finder AI Pipeline</h3>
-                        </div>
-                        <p>Esteira automatizada de scraping, transformação de dados e inteligência de triagem baseada em IA rodando localmente (Ollama/LM Studio), integrada com banco de dados analítico e sistemas de produtividade.</p>
-                    </div>
-                </div>
+      <div class="tag">
+        Arquitetura de Soluções • Operações • Integração • Governança
+      </div>
 
-                <div class="project-card">
-                    <div>
-                        <div class="tags"><span class="tag">IoT</span><span class="tag">Arduino</span><span class="tag">C++</span></div>
-                        <div class="project-header">
-                            <h3>Hardware Maker Interativo</h3>
-                        </div>
-                        <p>Prototipagem física e firmware customizado C++ para controle de gabinetes interativos, utilizando matrizes de entrada e sinalização dinâmica em tiras de LED endereçáveis em gabinetes estruturais planejados sob medida.</p>
-                    </div>
-                </div>
+      <h1>
+        Desenho arquiteturas escaláveis conectando
+        <span>processos, sistemas e dados.</span>
+      </h1>
 
-                <div class="project-card">
-                    <div>
-                        <div class="tags"><span class="tag">Proxmox</span><span class="tag">Docker</span><span class="tag">Security</span></div>
-                        <div class="project-header">
-                            <h3>Infraestrutura de Home Lab Resiliente</h3>
-                        </div>
-                        <p>Arquitetura residencial avançada operada sob hypervisors redundantes, contêinerização centralizada e implantação de ferramentas de varredura ativa de rede e scanner de vulnerabilidades.</p>
-                    </div>
-                </div>
+      <p>
+        Arquiteto de Soluções com mais de 20 anos de experiência em TI,
+        atuando na interseção entre estratégia, arquitetura e execução.
+        Especializado em integração de sistemas, observabilidade,
+        operações e transformação tecnológica.
+      </p>
 
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2 class="section-title">Trajetória Profissional de Impacto</h2>
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="job-title">Sponsor de Melhorias Contínuas & Arquiteto de Sistemas</div>
-                    <div class="job-company">WCS Conectologia</div>
-                    <div class="job-date">Histórico de Liderança Operacional</div>
-                    <ul class="job-desc">
-                        <li>Liderança estratégica e técnica no desenho e governança do modelo operacional ponta a ponta integrando Vendas (Salesforce), Backoffice/Estoque (TOTVS Protheus) e Ativações (OTRS).</li>
-                        <li>Modernização do ecossistema de Field Service através de mobilidade inteligente e leitura de QR Codes, eliminando a manipulação manual e reduzindo erros de faturamento de ativos.</li>
-                        <li>Desenho técnico do projeto de Logística Avançada "BAAT Conceito", viabilizando portarias virtuais automáticas, controle remoto e biometria para auditoria contínua de estoques de insumos.</li>
-                        <li>Desenvolvimento de régua de cobrança automática via canais eletrônicos nativos integrados ao ERP, reduzindo o overhead financeiro e otimizando a recuperação de receitas de base.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="job-title">Arquiteto de Sistemas de TI Sênior</div>
-                    <div class="job-company">Caedu</div>
-                    <div class="job-date">Junho de 2022 — Março de 2025</div>
-                    <ul class="job-desc">
-                        <li>Arquitetura e modelagem de integrações complexas de sistemas de e-commerce e varejo crítico, garantindo resiliência e estabilidade transacional.</li>
-                        <li>Otimização drástica do ciclo de testes e QA, reduzindo rotinas homologatórias complexas de dias para poucas horas via esteiras modernas de deploy.</li>
-                        <li>Implementação de telemetria preditiva em tempo real através de dashboards integrados (Zabbix/Grafana), antecipando falhas em fluxos logísticos cruciais.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="education">
-            <h2 class="section-title">Formação Acadêmica & Certificações</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="job-title">Pós-Graduação Lato Sensu em Cibersegurança e Proteção Digital de Negócios</div>
-                    <div class="job-company">FIA Business School</div>
-                    <div class="job-date">Concluído (Dezembro de 2025)</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="job-title">Gestão em Tecnologia da Informação</div>
-                    <div class="job-company">Anhanguera Educacional</div>
-                    <div class="job-date">Graduação</div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Cesar Araujo. Desenvolvido e hospedado de forma independente via GitHub Pages.</p>
-        </footer>
+      <div class="hero-buttons">
+        <a href="#cases" class="btn btn-primary">Ver Cases</a>
+        <a href="https://www.linkedin.com" target="_blank" class="btn btn-secondary">LinkedIn</a>
+      </div>
 
     </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="container">
+
+    <h2 class="section-title">Sobre</h2>
+
+    <p class="section-subtitle">
+      Minha atuação combina arquitetura corporativa, integração de sistemas,
+      observabilidade e governança tecnológica para transformar operações complexas
+      em ambientes escaláveis, resilientes e orientados ao negócio.
+    </p>
+
+    <div class="grid grid-3">
+
+      <div class="card">
+        <h3>Arquitetura Estratégica</h3>
+        <p>
+          Construção de modelos arquiteturais alinhados aos objetivos do negócio,
+          garantindo escalabilidade e governança.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Operações & Observabilidade</h3>
+        <p>
+          Estruturação de métricas, logs e monitoramento para ambientes críticos,
+          reduzindo tempo de troubleshooting e aumentando visibilidade operacional.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Integração & APIs</h3>
+        <p>
+          Desenvolvimento de arquiteturas orientadas a eventos e APIs para integração
+          entre plataformas, ERPs, marketplaces e serviços corporativos.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="especialidades">
+  <div class="container">
+
+    <h2 class="section-title">Especialidades</h2>
+
+    <p class="section-subtitle">
+      Áreas de atuação focadas em arquitetura corporativa, transformação operacional e integração.
+    </p>
+
+    <div class="grid grid-3">
+
+      <div class="card">
+        <h3>Arquitetura Corporativa</h3>
+        <p>Governança arquitetural, capability mapping, direcionadores estratégicos e gestão de obsolescência.</p>
+      </div>
+
+      <div class="card">
+        <h3>SRE & Operações</h3>
+        <p>Automação operacional, observabilidade, confiabilidade e monitoramento de ambientes críticos.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cloud & Integração</h3>
+        <p>Integração entre plataformas, APIs, eventos e arquiteturas distribuídas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="container">
+
+    <h2 class="section-title">Cases de Arquitetura</h2>
+
+    <p class="section-subtitle">
+      Projetos e iniciativas voltadas para integração, transformação operacional e escalabilidade.
+    </p>
+
+    <div class="grid grid-3">
+
+      <div class="card">
+        <h3>Reembolso VTEX + IRIS</h3>
+        <p>
+          Estruturação da arquitetura de integração entre plataforma e-commerce e sistema financeiro,
+          automatizando o fluxo de reembolso e rastreabilidade operacional.
+        </p>
+
+        <div class="impact">
+          ✔ Maior controle operacional e redução de atividades manuais
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Modelo Operacional de Arquitetura</h3>
+        <p>
+          Definição de governança, processos arquiteturais, papéis e frameworks para evolução organizacional.
+        </p>
+
+        <div class="impact">
+          ✔ Estruturação da atuação arquitetural corporativa
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Observabilidade Corporativa</h3>
+        <p>
+          Implementação de monitoramento centralizado utilizando Grafana e pipelines de métricas.
+        </p>
+
+        <div class="impact">
+          ✔ Redução do tempo de troubleshooting e aumento da visibilidade operacional
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <h2 class="section-title">Jornada Profissional</h2>
+
+    <p class="section-subtitle">
+      Experiência conectando tecnologia, operações e estratégia em ambientes corporativos.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>Arquiteto de Sistemas • Caedu</h3>
+        <p>
+          Liderança de iniciativas arquiteturais, governança tecnológica,
+          integração de sistemas e evolução operacional.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Arquitetura & Observabilidade</h3>
+        <p>
+          Estruturação de monitoramento, métricas e automações voltadas para confiabilidade operacional.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Integração & APIs</h3>
+        <p>
+          Construção de integrações corporativas entre plataformas, ERPs e sistemas críticos.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="container">
+
+    <h2 class="section-title">Stack Arquitetural</h2>
+
+    <p class="section-subtitle">
+      Tecnologias, frameworks e práticas utilizadas na construção de arquiteturas modernas.
+    </p>
+
+    <div class="stack">
+      <span>TOGAF</span>
+      <span>ArchiMate</span>
+      <span>Grafana</span>
+      <span>Python</span>
+      <span>MongoDB</span>
+      <span>Kafka</span>
+      <span>REST APIs</span>
+      <span>Apache</span>
+      <span>Cloud</span>
+      <span>Observabilidade</span>
+      <span>Governança</span>
+      <span>DevOps</span>
+      <span>SRE</span>
+      <span>Integração</span>
+      <span>Event-Driven</span>
+      <span>Arquitetura Corporativa</span>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="cta" id="contato">
+      <h2>Vamos conversar sobre arquitetura e transformação operacional.</h2>
+
+      <p>
+        Disponível para oportunidades em Arquitetura de Soluções,
+        Arquitetura Corporativa e iniciativas estratégicas de transformação tecnológica.
+      </p>
+
+      <div class="hero-buttons" style="justify-content:center;">
+        <a href="mailto:seuemail@exemplo.com" class="btn btn-primary">Entrar em contato</a>
+        <a href="https://github.com/cesardeoaraujo" target="_blank" class="btn btn-secondary">GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Cesar Araujo • Arquitetura de Soluções & Transformação Tecnológica
+  </div>
+</footer>
 
 </body>
 </html>
