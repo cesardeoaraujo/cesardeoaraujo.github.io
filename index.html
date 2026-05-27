@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cesar Araujo | Arquiteto de Soluções</title>
+  <meta name="description" content="Arquiteto de Soluções com mais de 20 anos de experiência em TI. Especialista em integração de sistemas, observabilidade, operações e transformação tecnológica." />
+  <meta property="og:title" content="Cesar Araujo | Arquiteto de Soluções" />
+  <meta property="og:description" content="Arquiteto de Soluções com mais de 20 anos de experiência em TI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cesardeoaraujo.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -114,9 +120,46 @@
       width: 100%;
     }
 
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text);
+      z-index: 1001;
+    }
+
     @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
       .menu {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(10, 14, 39, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 80px 40px 40px;
+        gap: 24px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 1px solid var(--border);
+      }
+
+      .menu-toggle:checked ~ .menu {
+        right: 0;
+      }
+
+      .menu a {
+        font-size: 1.1rem;
       }
     }
 
@@ -229,25 +272,13 @@
     }
 
     @keyframes slideInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* SECTIONS */
@@ -326,16 +357,6 @@
       line-height: 1.7;
     }
 
-    .impact {
-      margin-top: 20px;
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
     /* TIMELINE */
     .timeline {
       border-left: 2px solid var(--border);
@@ -350,17 +371,9 @@
       animation: slideInUp 0.8s ease-out both;
     }
 
-    .timeline-item:nth-child(2) {
-      animation-delay: 0.1s;
-    }
-
-    .timeline-item:nth-child(3) {
-      animation-delay: 0.2s;
-    }
-
-    .timeline-item:nth-child(4) {
-      animation-delay: 0.3s;
-    }
+    .timeline-item:nth-child(2) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.3s; }
 
     .timeline-item::before {
       content: '';
@@ -704,8 +717,76 @@
       color: var(--secondary);
     }
 
-    .publication-embed {
-      width: 100%;
+    /* CERTIFICATES */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .certificate-provider {
+      background: linear-gradient(135deg, var(--card) 0%, rgba(20, 29, 58, 0.5) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .certificate-provider:hover {
+      transform: translateY(-6px);
+      border-color: var(--border);
+      box-shadow: 0 12px 40px rgba(79, 140, 255, 0.1);
+    }
+
+    .certificate-provider h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .certificate-list {
+      list-style: none;
+    }
+
+    .certificate-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .certificate-list li:last-child {
+      border-bottom: none;
+    }
+
+    .certificate-list .cert-name {
+      flex: 1;
+    }
+
+    .certificate-list .cert-date {
+      color: var(--muted);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .certificate-list .cert-hours {
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .hours-summary {
       margin-top: 40px;
       padding: 28px;
       border: 1px solid var(--border-subtle);
@@ -713,13 +794,126 @@
       background: linear-gradient(135deg, var(--card) 0%, rgba(20, 29, 58, 0.5) 100%);
     }
 
-    .publication-embed h3 {
+    .hours-summary h3 {
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+    }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(79, 140, 255, 0.05);
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .hours-item .hours-name {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .hours-item .hours-value {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* LINKEDIN POSTS */
+    .linkedin-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 28px;
+    }
+
+    .linkedin-post-card {
+      background: linear-gradient(135deg, var(--card) 0%, rgba(20, 29, 58, 0.5) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 28px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .linkedin-post-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border);
+      box-shadow: 0 12px 40px rgba(79, 140, 255, 0.1);
+    }
+
+    .linkedin-post-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-bottom: 16px;
     }
 
-    .publication-embed iframe {
-      width: 100%;
-      border-radius: 12px;
+    .linkedin-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0077b5, #00a0dc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .linkedin-post-source {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .linkedin-post-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .linkedin-post-excerpt {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .linkedin-post-link {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .linkedin-post-link:hover {
+      gap: 12px;
+      color: var(--secondary);
+    }
+
+    .linkedin-posts-note {
+      margin-top: 40px;
+      padding: 20px 24px;
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+      background: rgba(79, 140, 255, 0.03);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
     }
 
     /* RESPONSIVE */
@@ -731,7 +925,6 @@
       margin-top: 80px;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero {
         padding: 60px 0;
@@ -767,11 +960,20 @@
         grid-template-columns: 1fr;
       }
 
-      .menu {
-        display: none;
+      .publications-grid,
+      .linkedin-posts-grid,
+      .certificates-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .certificate-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
       }
     }
   </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -779,10 +981,14 @@
   <div class="container">
     <nav>
       <div class="logo">Cesar<span>Araujo</span></div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu">☰</label>
       <div class="menu">
         <a href="#sobre">Sobre</a>
         <a href="#jornada">Jornada</a>
+        <a href="#certificados">Certificados</a>
         <a href="#publicacoes">Publicações</a>
+        <a href="#linkedin-posts">LinkedIn</a>
         <a href="#stack">Stack</a>
         <a href="#recomendacoes">Recomendações</a>
         <a href="#contato">Contato</a>
@@ -795,18 +1001,18 @@
   <div class="container">
     <div class="hero-content">
       <div class="tag">🏗️ Arquitetura • Operações • Integração • Transformação</div>
-      
+
       <h1>Desenho arquiteturas escaláveis conectando <span>processos, sistemas e dados</span></h1>
-      
+
       <p>
         Arquiteto de Soluções com mais de 20 anos de experiência em TI, atuando na interseção entre 
         estratégia, arquitetura e execução. Especializado em integração de sistemas, observabilidade, 
         operações e transformação tecnológica.
       </p>
-      
+
       <div class="hero-buttons">
         <a href="#jornada" class="btn btn-primary">Explorar Trajetória</a>
-        <a href="https://www.linkedin.com/in/cesardearaujo" target="_blank" class="btn btn-secondary">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/cesardearaujo" target="_blank" class="btn btn-secondary" aria-label="LinkedIn de Cesar Araujo">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -948,6 +1154,107 @@
   </div>
 </section>
 
+<section id="certificados">
+  <div class="container">
+    <h2 class="section-title">Licenças & Certificados</h2>
+    <p class="section-subtitle">
+      Formação contínua em arquitetura, liderança, tecnologias emergentes e práticas ágeis.
+    </p>
+
+    <div class="certificates-grid">
+      <div class="certificate-provider">
+        <h3>🎓 FIAP</h3>
+        <ul class="certificate-list">
+          <li>
+            <span class="cert-name">Leadership Communication</span>
+            <span class="cert-date">Abr 2024</span>
+          </li>
+          <li>
+            <span class="cert-name">Soluções Tecnológicas Emergentes</span>
+            <span class="cert-date">Abr 2024</span>
+          </li>
+          <li>
+            <span class="cert-name">Inteligência Artificial e Computacional</span>
+            <span class="cert-date">Mar 2024, Abr 2024</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="certificate-provider">
+        <h3>💼 LinkedIn</h3>
+        <ul class="certificate-list">
+          <li>
+            <span class="cert-name">Gestão por Resultados</span>
+            <span class="cert-date">Nov 2023</span>
+          </li>
+          <li>
+            <span class="cert-name">Liderança Ágil: Como se Adaptar à Nova Realidade</span>
+            <span class="cert-date">Out 2021</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="certificate-provider">
+        <h3>🔄 Ka Solution</h3>
+        <ul class="certificate-list">
+          <li>
+            <span class="cert-name">Scrum Master</span>
+            <span class="cert-date">Out 2021</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="certificate-provider">
+        <h3>🌐 Cisco</h3>
+        <ul class="certificate-list">
+          <li>
+            <span class="cert-name">CCNA Exploration: Network Fundamentals (V4.0)</span>
+            <span class="cert-date">Concluído</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hours-summary">
+      <h3>📚 Carga Horária por Curso</h3>
+      <div class="hours-grid">
+        <div class="hours-item">
+          <span class="hours-name">Leadership Communication</span>
+          <span class="hours-value">40h</span>
+        </div>
+        <div class="hours-item">
+          <span class="hours-name">Inteligência Artificial e Computacional</span>
+          <span class="hours-value">20h</span>
+        </div>
+        <div class="hours-item">
+          <span class="hours-name">Scrum Master</span>
+          <span class="hours-value">40h</span>
+        </div>
+        <div class="hours-item">
+          <span class="hours-name">ITIL v3 - Foundations</span>
+          <span class="hours-value">20h</span>
+        </div>
+        <div class="hours-item">
+          <span class="hours-name">Linux Center Engineer</span>
+          <span class="hours-value">40h</span>
+        </div>
+        <div class="hours-item">
+          <span class="hours-name">Linux Center Network</span>
+          <span class="hours-value">40h</span>
+        </div>
+        <div class="hours-item">
+          <span class="hours-name">Linux Center Professional</span>
+          <span class="hours-value">40h</span>
+        </div>
+        <div class="hours-item">
+          <span class="hours-name">Linux Center Technician</span>
+          <span class="hours-value">40h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="stack">
   <div class="container">
     <h2 class="section-title">Stack Arquitetural</h2>
@@ -992,8 +1299,8 @@
     <div class="recommendations">
       <div class="recommendation-card">
         <div class="recommendation-header">
-          <a href="https://www.linkedin.com/in/gustavo-marques-291b45159" target="_blank" class="recommendation-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQG37Pj0LEviuA/profile-displayphoto-shrink_800_800/B4DZalgyWGHQAc-/0/1746533558180?e=1781136000&v=beta&t=_dTj1bds_cYE3BskusEO6oFUjQK5CrXPb5H2wOZ-ec4" alt="Gustavo Marques" onerror="this.style.display='none'">
+          <a href="https://www.linkedin.com/in/gustavo-marques-291b45159" target="_blank" class="recommendation-avatar" aria-label="Gustavo Marques">
+            GM
           </a>
           <div>
             <a href="https://www.linkedin.com/in/gustavo-marques-291b45159/" target="_blank" class="recommendation-name">Gustavo Marques</a>
@@ -1009,8 +1316,8 @@
 
       <div class="recommendation-card">
         <div class="recommendation-header">
-          <a href="https://www.linkedin.com/in/adilson-castro-/" target="_blank" class="recommendation-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFyhC_sQ9XLPw/profile-displayphoto-shrink_100_100/B4DZXPHJvGHIAU-/0/1742936514107?e=1781136000&v=beta&t=ndNgo8pWHffU6cvo63Mhs29c0E6ANWmli3h4bclfxTU" alt="Adilson Castro" onerror="this.style.display='none'">
+          <a href="https://www.linkedin.com/in/adilson-castro-/" target="_blank" class="recommendation-avatar" aria-label="Adilson Castro">
+            AC
           </a>
           <div>
             <a href="https://www.linkedin.com/in/adilson-castro-/" target="_blank" class="recommendation-name">Adilson Castro</a>
@@ -1026,8 +1333,8 @@
 
       <div class="recommendation-card">
         <div class="recommendation-header">
-          <a href="https://www.linkedin.com/in/dalton-miranda" target="_blank" class="recommendation-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHtkgA8tTo2ug/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1692486943855?e=1781136000&v=beta&t=XEDAu9un0D3w_ciAB7JJJFTz_WMQriK1NXvsL3pPgvk" alt="Dalton Miranda" onerror="this.style.display='none'">
+          <a href="https://www.linkedin.com/in/dalton-miranda" target="_blank" class="recommendation-avatar" aria-label="Dalton Miranda">
+            DM
           </a>
           <div>
             <a href="https://www.linkedin.com/in/dalton-miranda" target="_blank" class="recommendation-name">Dalton Miranda</a>
@@ -1043,8 +1350,8 @@
 
       <div class="recommendation-card">
         <div class="recommendation-header">
-          <a href="https://www.linkedin.com/in/klabermalara" target="_blank" class="recommendation-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQE5EOqPSiCqWA/profile-displayphoto-scale_400_400/B4DZ0Wx.eZGoAg-/0/1774203694490?e=1781136000&v=beta&t=btdiGWZvLgS2hCzeNmjcBQIxPcDDkjw79ugadSQtkd0" alt="Klaber Malara" onerror="this.style.display='none'">
+          <a href="https://www.linkedin.com/in/klabermalara" target="_blank" class="recommendation-avatar" aria-label="Klaber Malara">
+            KM
           </a>
           <div>
             <a href="https://www.linkedin.com/in/klabermalara" target="_blank" class="recommendation-name">Klaber Malara</a>
@@ -1060,9 +1367,8 @@
 
       <div class="recommendation-card">
         <div class="recommendation-header">
-          <a href="https://www.linkedin.com/in/jose-antonio-soares-telecom/" target="_blank" class="recommendation-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHC9S18tf8wjg/profile-displayphoto-shrink_100_100/B4DZbRJsgqHsAU-/0/1747265703005?e=1781136000&v=beta&t=GEvO7Xx_3jSTBs8y37Bgn3S1Q8N8HwYOlpF9kTB3dpI
-" alt="José Antonio Soares" onerror="this.style.display='none'">
+          <a href="https://www.linkedin.com/in/jose-antonio-soares-telecom/" target="_blank" class="recommendation-avatar" aria-label="José Antonio Soares">
+            JS
           </a>
           <div>
             <a href="https://www.linkedin.com/in/jose-antonio-soares-telecom/" target="_blank" class="recommendation-name">José Antonio Soares</a>
@@ -1078,8 +1384,8 @@
 
       <div class="recommendation-card">
         <div class="recommendation-header">
-          <a href="https://www.linkedin.com/in/leo9111" target="_blank" class="recommendation-avatar">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFd0WGBLGdF3Q/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1705487229392?e=1781136000&v=beta&t=fT62y2aXnQRWemY7NJof9WhDv1_3OEnlgc84j4H_ZVY" alt="Leonardo Ribeiro" onerror="this.style.display='none'">
+          <a href="https://www.linkedin.com/in/leo9111" target="_blank" class="recommendation-avatar" aria-label="Leonardo Ribeiro">
+            LR
           </a>
           <div>
             <a href="https://www.linkedin.com/in/leo9111" target="_blank" class="recommendation-name">Leonardo Ribeiro</a>
@@ -1094,8 +1400,6 @@
       </div>
     </div>
   </div>
-</section>
-
 </section>
 
 <section id="publicacoes">
@@ -1167,17 +1471,68 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="publication-embed">
-      <h3>Últimas publicações do LinkedIn</h3>
-      <p style="color: var(--text-secondary); margin-bottom: 20px;">
-      </p>
-      <pre style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 8px; overflow: auto; color: var(--muted); font-size: 0.85rem;">
-&lt;<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7451345579579916288?collapsed=1" height="567" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada"></iframe>&gt;
-      </pre>
+<section id="linkedin-posts">
+  <div class="container">
+    <h2 class="section-title">Posts do LinkedIn</h2>
+    <p class="section-subtitle">
+      Reflexões, cases práticos e aprendizados compartilhados diretamente no LinkedIn.
+    </p>
+
+    <div class="linkedin-posts-grid">
+      <div class="linkedin-post-card">
+        <div class="linkedin-post-header">
+          <div class="linkedin-icon">in</div>
+          <div class="linkedin-post-source">Publicado no LinkedIn</div>
+        </div>
+        <h3 class="linkedin-post-title">Deixei de ser "caçador de vagas"… e virei o arquiteto do meu próprio funil de oportunidades.</h3>
+        <p class="linkedin-post-excerpt">
+          Como redefini minha abordagem profissional, construindo um funil estratégico de oportunidades 
+          baseado em arquitetura de soluções, visibilidade técnica e posicionamento de mercado.
+        </p>
+        <a href="https://www.linkedin.com/posts/cesardearaujo_automaaexaeto-arquitetura-sre-share-7462285690098040832-bcXA/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAARGlYUBdLd84IAbT4gwQ8CGPlX8V0hAvlA" target="_blank" class="linkedin-post-link">
+          Ver no LinkedIn →
+        </a>
+      </div>
+
+      <div class="linkedin-post-card">
+        <div class="linkedin-post-header">
+          <div class="linkedin-icon">in</div>
+          <div class="linkedin-post-source">Publicado no LinkedIn</div>
+        </div>
+        <h3 class="linkedin-post-title">Automação de Dados: Do Endpoint ao Dashboard</h3>
+        <p class="linkedin-post-excerpt">
+          Como construir pipelines de dados automatizados usando n8n, conectando endpoints a dashboards 
+          em tempo real para decisões orientadas por dados.
+        </p>
+        <a href="https://www.linkedin.com/posts/cesardearaujo_n8n-dataengineering-automation-ugcPost-7447085599368499200-26C-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAARGlYUBdLd84IAbT4gwQ8CGPlX8V0hAvlA" target="_blank" class="linkedin-post-link">
+          Ver no LinkedIn →
+        </a>
+      </div>
+
+      <div class="linkedin-post-card">
+        <div class="linkedin-post-header">
+          <div class="linkedin-icon">in</div>
+          <div class="linkedin-post-source">Publicado no LinkedIn</div>
+        </div>
+        <h3 class="linkedin-post-title">Como saí da infraestrutura e cheguei à Arquitetura de Sistemas (e o que aprendi no caminho)</h3>
+        <p class="linkedin-post-excerpt">
+          Minha trajetória da operação à arquitetura: lições aprendidas, habilidades desenvolvidas 
+          e o mindset necessário para fazer a transição de carreira.
+        </p>
+        <a href="https://www.linkedin.com/posts/cesardearaujo_como-sa%C3%AD-da-infraestrutura-e-cheguei-%C3%A0-arquitetura-share-7455072963898306560-4zQz/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAARGlYUBdLd84IAbT4gwQ8CGPlX8V0hAvlA" target="_blank" class="linkedin-post-link">
+          Ver no LinkedIn →
+        </a>
+      </div>
+    </div>
+
+    <div class="linkedin-posts-note">
+      💡 <strong>Quer adicionar mais posts?</strong> Basta copiar o bloco <code>.linkedin-post-card</code> acima, 
+      alterar o título, excerpt e link. Os novos posts aparecerão automaticamente no grid.
     </div>
   </div>
-
 </section>
 
 <section id="contato">
@@ -1190,7 +1545,7 @@
       </p>
       <div class="hero-buttons">
         <a href="mailto:cesar.araujo@outlook.com" class="btn btn-primary">✉️ Enviar Email</a>
-        <a href="https://www.linkedin.com/in/cesardearaujo" target="_blank" class="btn btn-secondary">💼 LinkedIn</a>
+        <a href="https://www.linkedin.com/in/cesardearaujo" target="_blank" class="btn btn-secondary" aria-label="LinkedIn de Cesar Araujo">💼 LinkedIn</a>
       </div>
     </div>
   </div>
